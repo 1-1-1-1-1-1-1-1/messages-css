@@ -1,0 +1,48 @@
+/* Style for message block (as in the messenger):
+(c) the Internet-site https://slang.net/meaning/thirsty file styles 
+Part of the file *.css at sources/style(s)/. */
+
+.ex {
+    max-width: 85%;
+    display: inline-block;
+    position: relative;
+    background: var(--green);
+    color: var(--white);
+    font-size: .875em;
+    padding: .5em 1em;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-bottom: 20px;
+    --sms-corner:polygon(25% 25%, 50% 0, 50% 20%, 56% 40%, 61% 54%, 70% 72%, 84% 87%, 100% 100%, 76% 99%, 55% 96%, 38% 90%, 24% 80%, 10% 66%, 0 47%)
+}
+
+.ex:last-child {
+    margin-bottom:0
+}
+
+.ex::after {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    left: -9px;
+    bottom: 0;
+    content: '';
+    background: var(--green);
+    clip-path: var(--sms-corner);
+    transform:scaleX(-1)
+}
+
+.ex:nth-child(4n + 3) {
+    background: var(--exblue);
+    color: #fff;
+    margin-right: unset;
+    margin-left:auto
+}
+
+.ex:nth-child(4n + 3):after {
+    background: var(--exblue);
+    left: auto;
+    right: -9px;
+    transform:none
+}
